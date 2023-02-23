@@ -116,11 +116,16 @@ body {
 }
 
 .home-header {
+  display: flex;
   font-size: 1.5rem;
 }
 
 .home-header:hover {
   cursor: pointer;
+}
+
+.home-header-logo {
+  display: none;
 }
 
 .home-page {
@@ -130,7 +135,7 @@ body {
   justify-content: center;
   grid-column-start: 1;
   grid-row-start: 1;
-  background-color: #717171;
+  background-color: lightcyan;
 }
 
 .greating {
@@ -197,7 +202,7 @@ button.resume:active,
       height: 100svh; */
   grid-column-start: 1;
   grid-row-start: 2;
-  background-color: lightcoral;
+  background-color: lightpink;
 }
 
 .skill-heading,
@@ -255,6 +260,7 @@ button.resume:active,
   grid-column-start: 1;
   grid-row-start: 3;
   text-align: center;
+  background-color: lightsalmon;
 }
 
 /* Gallery */
@@ -365,6 +371,7 @@ img {
       height: 100svh; */
   /* margin-top: 10em; */
   /* padding: 2em 0 0 0; */
+  background-color: aqua;
 }
 
 .contact-heading {
