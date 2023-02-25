@@ -2,7 +2,7 @@ const navLinks = document.querySelectorAll(".nav-target");
 const sections = document.querySelectorAll("section");
 const homeNav = document.querySelector(".home");
 const backHomeButton = document.querySelector(".back-home");
-const homeHeader = document.querySelector(".home-header-logo");
+const logoContainer = document.querySelector(".logo-container");
 const mainHeader = document.querySelector(".main-header");
 const navBar = document.querySelector(".navbar");
 const inputForm = document.querySelector("form");
@@ -17,17 +17,19 @@ const inputName = document.querySelector(".input-name");
 //   });
 // });
 
+// window.innerWidth < 767 ? backHomeButton.classList.remove(".back-home") : null;
+
 const isAtHome = () => {
   homeNav.classList.contains("active")
     ? ((backHomeButton.style.display = "none"),
-      (homeHeader.style.display = "none"),
+      (logoContainer.style.display = "none"),
       (mainHeader.style.justifyContent = "center"),
       (navBar.style.gap = "4em"),
       [...navLinks].map((navLink) => (navLink.style.fontSize = "1.1rem")))
-    : ((backHomeButton.style.display = "flex"),
+    : (window.innerWidth > 768 ? (backHomeButton.style.display = "flex") : null,
       (backHomeButton.style.justifyContent = "center"),
       (backHomeButton.style.alignItems = "center"),
-      (homeHeader.style.display = "block"),
+      (logoContainer.style.display = "block"),
       (mainHeader.style.justifyContent = "space-between"),
       (navBar.style.gap = "1.5em"),
       [...navLinks].map((navLink) => (navLink.style.fontSize = "1rem")));
