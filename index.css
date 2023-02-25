@@ -423,6 +423,21 @@ img {
   width: 27em;
 }
 
+@media (max-width: 1068px) {
+  .input-container {
+    display: flex;
+    grid-column: 2/4;
+    flex-direction: column;
+    padding: 0.5em 1.5em 0.5em 0.5em;
+    margin-right: 6em;
+    background-color: rgba(0, 0, 255, 0.05);
+    box-shadow: 0 0.5em 1em 0.1em rgba(0, 0, 255, 0.1);
+    border-radius: 0.333em;
+    flex: 0 1 auto;
+    width: 10em;
+  }
+}
+
 .form-item {
   position: relative;
 }
@@ -466,6 +481,21 @@ textarea:focus ~ .placeholder {
   padding: 1.2em 0.5em;
   font-size: 1.125rem;
   border-radius: 0.333em;
+}
+
+@media (max-width: 1068px) {
+  .input-message {
+    border: none;
+    border-bottom: 0.1em solid #ccc;
+    width: 100%;
+    height: 6em;
+    resize: none;
+    outline: none;
+    margin-bottom: 1em;
+    padding: 1.2em 0.5em;
+    font-size: 1.125rem;
+    border-radius: 0.333em;
+  }
 }
 
 .placeholder {
