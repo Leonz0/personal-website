@@ -19,14 +19,33 @@ const inputName = document.querySelector(".input-name");
 
 // window.innerWidth < 767 ? backHomeButton.classList.remove(".back-home") : null;
 
-const tglbtn = document.getElementById("nav-toggle");
+const tglbtn = document.querySelector(".hamburger");
 const navContainer = document.querySelector(".nav-container");
 
-tglbtn.addEventListener("click", () => {
-  console.log("xxx");
-  navContainer.style.display = "flex";
-  navContainer.style.flexDirection = "column";
+// tglbtn.addEventListener("click", () => {
+//   console.log("xxx");
+//   navContainer.classList.contains("active")
+//     ? navContainer.classList.remove("active")
+//     : navContainer.classList.add("active");
+// });
+
+document.addEventListener("click", (e) => {
+  console.log(e.target);
+  e.target !== tglbtn
+    ? navContainer.classList.remove("active")
+    : navContainer.classList.contains("active")
+    ? navContainer.classList.remove("active")
+    : navContainer.classList.add("active");
 });
+
+// document.addEventListener("touchstart", (e) => {
+//   console.log(e.target);
+//   e.target !== tglbtn
+//     ? navContainer.classList.remove("active")
+//     : navContainer.classList.contains("active")
+//     ? navContainer.classList.remove("active")
+//     : navContainer.classList.add("active");
+// });
 
 const isAtHome = () => {
   homeNav.classList.contains("active")
