@@ -29,16 +29,7 @@ const navContainer = document.querySelector(".nav-container");
 //     : navContainer.classList.add("active");
 // });
 
-document.addEventListener("click", (e) => {
-  console.log(e.target);
-  e.target !== tglbtn
-    ? navContainer.classList.remove("active")
-    : navContainer.classList.contains("active")
-    ? navContainer.classList.remove("active")
-    : navContainer.classList.add("active");
-});
-
-// document.addEventListener("touchstart", (e) => {
+// document.addEventListener("click", (e) => {
 //   console.log(e.target);
 //   e.target !== tglbtn
 //     ? navContainer.classList.remove("active")
@@ -46,6 +37,15 @@ document.addEventListener("click", (e) => {
 //     ? navContainer.classList.remove("active")
 //     : navContainer.classList.add("active");
 // });
+
+document.addEventListener("touchstart", (e) => {
+  console.log(e.target);
+  e.target !== tglbtn
+    ? navContainer.classList.remove("active")
+    : navContainer.classList.contains("active")
+    ? navContainer.classList.remove("active")
+    : navContainer.classList.add("active");
+});
 
 const isAtHome = () => {
   homeNav.classList.contains("active")

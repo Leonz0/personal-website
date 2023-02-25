@@ -86,7 +86,6 @@ body {
 @media (max-width: 767px) {
   .back-home {
     display: none;
-    right: 50vw;
   }
 }
 
@@ -165,12 +164,13 @@ body {
   height: 3px;
   background-color: rgba(0, 0, 50, 0.8);
   margin: 4px auto;
+  z-index: 200;
 }
 
 @media (max-width: 719px) {
   .menu-icon {
     display: block;
-    position: absolute;
+    /* position: absolute; */
     top: 20px;
     right: 5%;
     color: orange;
