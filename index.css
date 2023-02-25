@@ -429,12 +429,12 @@ img {
     grid-column: 2/4;
     flex-direction: column;
     padding: 0.5em 1.5em 0.5em 0.5em;
-    margin-right: 6em;
+    margin-right: 7em;
     background-color: rgba(0, 0, 255, 0.05);
     box-shadow: 0 0.5em 1em 0.1em rgba(0, 0, 255, 0.1);
     border-radius: 0.333em;
-    flex: 0 1 auto;
-    width: 10em;
+    /* flex: 0 1 auto; */
+    width: 17em;
   }
 }
 
@@ -442,6 +442,16 @@ img {
   position: relative;
 }
 
+/* .form-item input:focus ~ .placeholder,
+textarea:focus ~ .placeholder {
+  transform: translateY(-1em);
+  font-size: 0.75rem;
+  margin: 0.2em 0 0 0.75em;
+  color: rgba(100, 100, 255, 0.67);
+} */
+
+.input-there input ~ .placeholder,
+.input-there textarea ~ .placeholder,
 .form-item input:focus ~ .placeholder,
 textarea:focus ~ .placeholder {
   transform: translateY(-1em);
@@ -450,12 +460,16 @@ textarea:focus ~ .placeholder {
   color: rgba(100, 100, 255, 0.67);
 }
 
-.input-there input ~ .placeholder,
-.input-there textarea ~ .placeholder {
-  transform: translateY(-1em);
-  font-size: 0.75rem;
-  margin: 0.2em 0 0 0.75em;
-  color: rgba(100, 100, 255, 0.67);
+@media (max-width: 1068px) {
+  .input-there input ~ .placeholder,
+  .input-there textarea ~ .placeholder,
+  .form-item input:focus ~ .placeholder,
+  textarea:focus ~ .placeholder {
+    transform: translateY(-1em);
+    font-size: 0.6rem;
+    margin: 0.5em 0 0 0.9em;
+    color: rgba(100, 100, 255, 0.67);
+  }
 }
 
 .form-item input {
@@ -468,6 +482,20 @@ textarea:focus ~ .placeholder {
 
   outline: none;
   border-radius: 0.333em;
+}
+
+@media (max-width: 1068px) {
+  .form-item input {
+    width: 100%;
+    border: none;
+    border-bottom: 0.1em solid #ccc;
+    padding: 1.1em 0.7em;
+    font-size: 0.8rem;
+    /* margin-bottom: 0.75em; */
+
+    outline: none;
+    border-radius: 0.333em;
+  }
 }
 
 .input-message {
@@ -504,6 +532,16 @@ textarea:focus ~ .placeholder {
   top: 1.2em;
   color: rgba(0, 0, 50, 0.67);
   transition: all 0.3s ease;
+}
+
+@media (max-width: 1068px) {
+  .placeholder {
+    position: absolute;
+    margin: 0 0 0 0.5em;
+    top: 1em;
+    color: rgba(0, 0, 50, 0.67);
+    transition: all 0.3s ease;
+  }
 }
 
 .contact-info {
