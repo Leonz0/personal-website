@@ -19,17 +19,28 @@ const inputName = document.querySelector(".input-name");
 
 // window.innerWidth < 767 ? backHomeButton.classList.remove(".back-home") : null;
 
+const tglbtn = document.getElementById("nav-toggle");
+const navContainer = document.querySelector(".nav-container");
+
+tglbtn.addEventListener("click", () => {
+  console.log("xxx");
+  navContainer.style.display = "flex";
+  navContainer.style.flexDirection = "column";
+});
+
 const isAtHome = () => {
   homeNav.classList.contains("active")
     ? ((backHomeButton.style.display = "none"),
-      (logoContainer.style.display = "none"),
+      window.innerWidth < 721
+        ? (logoContainer.style.display = "flex")
+        : (logoContainer.style.display = "none"),
       (mainHeader.style.justifyContent = "center"),
       (navBar.style.gap = "4em"),
       [...navLinks].map((navLink) => (navLink.style.fontSize = "1.1rem")))
     : (window.innerWidth > 768 ? (backHomeButton.style.display = "flex") : null,
       (backHomeButton.style.justifyContent = "center"),
       (backHomeButton.style.alignItems = "center"),
-      (logoContainer.style.display = "block"),
+      (logoContainer.style.display = "flex"),
       (mainHeader.style.justifyContent = "space-between"),
       (navBar.style.gap = "1.5em"),
       [...navLinks].map((navLink) => (navLink.style.fontSize = "1rem")));
