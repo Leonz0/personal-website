@@ -13,9 +13,14 @@ h1 {
   margin: 0;
 }
 
+p {
+  line-height: 0.3em;
+}
+
 body {
-  position: relative;
-  display: grid;
+  /* position: relative; */
+  /* position: relative;
+  display: grid; */
   /* grid-template-rows: 1fr 1fr 1fr 1fr; */
   /* grid-template-columns: 1fr; */
   font-family: sans-serif;
@@ -33,7 +38,8 @@ body {
 
 .nav-target {
   display: flex;
-  height: 2.5em;
+  /* height: 2.5em; */
+  /* overflow: hidden; */
   width: 5.5em;
   justify-content: center;
   align-items: center;
@@ -89,11 +95,16 @@ body {
 
 .header-container {
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   grid-column-start: 1;
   grid-row-start: 1;
-  height: 6rem;
-  z-index: 5;
+  /* height: 2rem; */
+  z-index: 110;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .main-header {
@@ -487,6 +498,8 @@ i {
 }
 
 section {
+  z-index: -1;
+  padding-top: 4em;
   height: 100vh;
   height: 100svh;
 }
