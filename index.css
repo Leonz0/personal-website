@@ -167,10 +167,14 @@ body {
   z-index: 200;
 }
 
+.hamburger {
+  z-index: 500;
+}
+
 @media (max-width: 719px) {
   .menu-icon {
     display: block;
-    /* position: absolute; */
+    position: absolute;
     top: 20px;
     right: 5%;
     color: orange;

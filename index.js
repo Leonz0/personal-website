@@ -19,46 +19,51 @@ const inputName = document.querySelector(".input-name");
 
 // window.innerWidth < 767 ? backHomeButton.classList.remove(".back-home") : null;
 
-const tglbtn = document.querySelector(".hamburger");
+const isMobile = () => (window.innerWidth < 721 ? true : false);
+
+const hamburger = document.getElementById("nav-toggle");
 const navContainer = document.querySelector(".nav-container");
 
-// tglbtn.addEventListener("click", () => {
-//   console.log("xxx");
-//   navContainer.classList.contains("active")
-//     ? navContainer.classList.remove("active")
-//     : navContainer.classList.add("active");
-// });
-
 document.addEventListener("click", (e) => {
-  console.log(e.target);
-  e.target !== tglbtn
-    ? navContainer.classList.remove("active")
-    : navContainer.classList.contains("active")
-    ? navContainer.classList.remove("active")
-    : navContainer.classList.add("active");
+  e.target.parentNode == hamburger || e.target == hamburger
+    ? (hamburger.classList.toggle("active"),
+      navContainer.classList.toggle("active"))
+    : // : e.target.parentNode == document.querySelector(".nav-container")
+      // ? setTimeout(() => {
+      //     hamburger.classList.remove("active"),
+      //       navContainer.classList.remove("active");
+      //   }, 500)
+      (hamburger.classList.remove("active"),
+      navContainer.classList.remove("active"));
 });
 
 document.addEventListener("touchstart", (e) => {
-  console.log(e.target);
-  e.target !== tglbtn ? navContainer.classList.remove("active") : null;
+  e.target != hamburger &&
+  e.terget.parentNode != document.querySelector(".nav-container")
+    ? (hamburger.classList.remove("active"),
+      navContainer.classList.remove("active"))
+    : null;
 });
 
 const isAtHome = () => {
+  const mobile = isMobile();
   homeNav.classList.contains("active")
     ? ((backHomeButton.style.display = "none"),
-      window.innerWidth < 721
+      !mobile
         ? (logoContainer.style.display = "flex")
-        : (logoContainer.style.display = "none"),
-      (mainHeader.style.justifyContent = "center"),
+        : ((logoContainer.style.display = "none"),
+          (mainHeader.style.justifyContent = "center")),
       (navBar.style.gap = "4em"),
       [...navLinks].map((navLink) => (navLink.style.fontSize = "1.1rem")))
-    : (window.innerWidth > 768 ? (backHomeButton.style.display = "flex") : null,
-      (backHomeButton.style.justifyContent = "center"),
-      (backHomeButton.style.alignItems = "center"),
-      (logoContainer.style.display = "flex"),
-      (mainHeader.style.justifyContent = "space-between"),
-      (navBar.style.gap = "1.5em"),
-      [...navLinks].map((navLink) => (navLink.style.fontSize = "1rem")));
+    : !mobile
+    ? (backHomeButton.style.display = "flex")
+    : null,
+    (backHomeButton.style.justifyContent = "center"),
+    (backHomeButton.style.alignItems = "center"),
+    (logoContainer.style.display = "flex"),
+    (mainHeader.style.justifyContent = "space-between"),
+    (navBar.style.gap = "1.5em"),
+    [...navLinks].map((navLink) => (navLink.style.fontSize = "1rem"));
 };
 
 isAtHome();
