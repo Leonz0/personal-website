@@ -38,7 +38,6 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener("touchstart", (e) => {
-  console.log(e.touches[0].target);
   e.touches[0].target != hamburger &&
   e.touches[0].target.parentNode != document.querySelector(".nav-container")
     ? (hamburger.classList.remove("active"),
@@ -53,18 +52,18 @@ const isAtHome = () => {
       !mobile
         ? (logoContainer.style.display = "flex")
         : ((logoContainer.style.display = "none"),
-          (mainHeader.style.justifyContent = "center")),
-      (navBar.style.gap = "4em"),
-      [...navLinks].map((navLink) => (navLink.style.fontSize = "1.1rem")))
-    : !mobile
+          (navBar.style.justifyContent = "center")),
+      (navBar.style.gap = "4em"))
+    : //   [...navLinks].map((navLink) => (navLink.style.fontSize = "1.1rem")))
+    !mobile
     ? (backHomeButton.style.display = "flex")
     : null,
     (backHomeButton.style.justifyContent = "center"),
     (backHomeButton.style.alignItems = "center"),
     (logoContainer.style.display = "flex"),
-    (mainHeader.style.justifyContent = "space-between"),
-    (navBar.style.gap = "1.5em"),
-    [...navLinks].map((navLink) => (navLink.style.fontSize = "1rem"));
+    (navBar.style.justifyContent = "space-between"),
+    (navBar.style.gap = "1.5em");
+  // [...navLinks].map((navLink) => (navLink.style.fontSize = "1rem"));
 };
 
 isAtHome();
