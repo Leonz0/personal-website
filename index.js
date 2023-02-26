@@ -27,23 +27,33 @@ const navContainer = document.querySelector(".nav-container");
 document.addEventListener("click", (e) => {
   e.target.parentNode == hamburger || e.target == hamburger
     ? (hamburger.classList.toggle("active"),
-      navContainer.classList.toggle("active"))
+      navContainer.classList.toggle("active"),
+      navBar.classList.toggle("active"))
     : // : e.target.parentNode == document.querySelector(".nav-container")
       // ? setTimeout(() => {
       //     hamburger.classList.remove("active"),
       //       navContainer.classList.remove("active");
       //   }, 500)
       (hamburger.classList.remove("active"),
-      navContainer.classList.remove("active"));
+      navContainer.classList.remove("active"),
+      navBar.classList.remove("active"));
 });
 
 document.addEventListener("touchstart", (e) => {
   e.touches[0].target != hamburger &&
   e.touches[0].target.parentNode != document.querySelector(".nav-container")
     ? (hamburger.classList.remove("active"),
-      navContainer.classList.remove("active"))
+      navContainer.classList.remove("active"),
+      navBar.classList.remove("active"))
     : null;
 });
+
+// hamburger.addEventListener("click", (e) => {
+//     (hamburger.classList.toggle("active"),
+//       navContainer.classList.toggle("active"),
+//       navBar.classList.toggle("active"))
+//     e.nextElementSibling == navContainer?
+// })
 
 const isAtHome = () => {
   const mobile = isMobile();

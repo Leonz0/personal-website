@@ -37,6 +37,21 @@ body {
   }
 }
 
+hr {
+  display: none;
+}
+
+@media (max-width: 719px) {
+  hr {
+    display: block;
+  }
+  hr.solid {
+    border-top: 0.1em solid #f26ca7;
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
 .nav-target {
   display: flex;
   /* height: 2.5em; */
@@ -149,13 +164,13 @@ body {
   display: none;
 }
 
-.bar {
+/* .bar {
   width: 1.3em;
   height: 0.19em;
   background-color: #0a2463;
   margin: 0.3rem auto;
   z-index: 200;
-}
+} */
 
 .hamburger {
   z-index: 500;
@@ -173,6 +188,74 @@ body {
   .menu-icon:hover .bar {
     background-color: #fb3640;
   }
+
+  .menu-icon {
+    width: 1.5em;
+    height: 0.19em;
+    z-index: 200;
+    margin: 0.3em auto;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  .menu-icon .bar {
+    z-index: 200;
+    display: block;
+    position: absolute;
+    height: 0.19em;
+    width: 100%;
+    background: #0a2463;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+
+  .menu-icon .bar:nth-child(1) {
+    top: 0;
+  }
+
+  .menu-icon .bar:nth-child(2) {
+    top: 0.6em;
+  }
+
+  .menu-icon .bar:nth-child(3) {
+    top: 1.2em;
+  }
+
+  .menu-icon.active .bar:nth-child(1) {
+    top: 0.3em;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  .menu-icon.active .bar:nth-child(2) {
+    opacity: 0;
+    left: -4rem;
+  }
+
+  .menu-icon.active .bar:nth-child(3) {
+    top: 0.3em;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
 }
 
 .nav-container {
@@ -188,6 +271,16 @@ body {
     display: flex;
     flex-direction: column;
     padding-top: 2.5em;
+    padding-bottom: 15em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    background-color: #f0f2fa;
+    box-shadow: 0 0 2em 1em rgba(61, 86, 184, 0.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .navbar.active {
+    box-shadow: 0 0 2em 1em rgba(61, 86, 184, 0.03);
   }
 }
 
