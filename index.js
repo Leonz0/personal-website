@@ -38,8 +38,9 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener("touchstart", (e) => {
+  console.log(e.touches[0].target);
   e.touches[0].target != hamburger &&
-  e.touches[0].target != document.querySelector(".nav-container")
+  e.touches[0].target.parentNode != document.querySelector(".nav-container")
     ? (hamburger.classList.remove("active"),
       navContainer.classList.remove("active"))
     : null;

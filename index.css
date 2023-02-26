@@ -145,8 +145,8 @@ body {
   /* align-items: center; */
   padding: 1.5em 2em 2em 2em;
 
-  background: linear-gradient(to top, transparent, white 75%, white);
-  /* background: rgba(100, 100, 255, 0.6); */
+  background: linear-gradient(to top, transparent, white 95%, white);
+  /* background: rgba(50, 50, 255, 1); */
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   opacity: 1;
