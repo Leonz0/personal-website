@@ -47,7 +47,7 @@ hr {
   }
   hr.solid {
     border-top: 0.1em solid #f26ca7;
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
   }
 }
@@ -283,7 +283,7 @@ hr {
     display: flex;
     flex-direction: column;
     max-height: 40svh;
-    width: 30vw;
+    width: 30%;
     padding-top: 2.5em;
     padding-bottom: 4em;
     padding-left: 2.5em;
