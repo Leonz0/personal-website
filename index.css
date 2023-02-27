@@ -283,7 +283,7 @@ hr {
     display: flex;
     flex-direction: column;
     max-height: 40svh;
-    width: 30%;
+    width: auto;
     padding-top: 2.5em;
     padding-bottom: 4em;
     padding-left: 2.5em;
