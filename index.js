@@ -25,7 +25,7 @@ const hamburger = document.getElementById("nav-toggle");
 const navContainer = document.querySelector(".nav-container");
 
 document.addEventListener("click", (e) => {
-  e.target.parentNode == hamburger || e.target == hamburger
+  e.target.parentNode == hamburger || e.target == navBar
     ? (hamburger.classList.toggle("active"),
       navContainer.classList.toggle("active"),
       navBar.classList.toggle("active"))
@@ -49,11 +49,16 @@ document.addEventListener("click", (e) => {
 // });
 
 // hamburger.addEventListener("click", (e) => {
-//     (hamburger.classList.toggle("active"),
-//       navContainer.classList.toggle("active"),
-//       navBar.classList.toggle("active"))
-//     e.nextElementSibling == navContainer?
-// })
+//   hamburger.classList.toggle("active"),
+//     navContainer.classList.toggle("active"),
+//     navBar.classList.toggle("active");
+// });
+
+// navContainer.addEventListener("click", () => {
+//   hamburger.classList.toggle("active"),
+//     navContainer.classList.toggle("active"),
+//     navBar.classList.toggle("active");
+// });
 
 const isAtHome = () => {
   const mobile = isMobile();
