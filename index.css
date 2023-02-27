@@ -185,15 +185,15 @@ hr {
     color: #0a2463;
   }
 
-  .menu-icon:hover .bar {
-    background-color: #fb3640;
-  }
+  /* .menu-icon:hover .bar {
+    background-color: rgb(50, 50, 255);
+  } */
 
   .menu-icon {
     width: 1.5em;
     height: 0.19em;
     z-index: 200;
-    margin: 0.3em auto;
+    margin: 0.25em auto;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -229,15 +229,15 @@ hr {
   }
 
   .menu-icon .bar:nth-child(2) {
-    top: 0.6em;
+    top: 0.5em;
   }
 
   .menu-icon .bar:nth-child(3) {
-    top: 1.2em;
+    top: 1em;
   }
 
   .menu-icon.active .bar:nth-child(1) {
-    top: 0.3em;
+    top: 0.4em;
     -webkit-transform: rotate(135deg);
     -moz-transform: rotate(135deg);
     -o-transform: rotate(135deg);
@@ -250,7 +250,7 @@ hr {
   }
 
   .menu-icon.active .bar:nth-child(3) {
-    top: 0.3em;
+    top: 0.4em;
     -webkit-transform: rotate(-135deg);
     -moz-transform: rotate(-135deg);
     -o-transform: rotate(-135deg);

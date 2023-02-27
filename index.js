@@ -39,14 +39,14 @@ document.addEventListener("click", (e) => {
       navBar.classList.remove("active"));
 });
 
-document.addEventListener("touchstart", (e) => {
-  e.touches[0].target != hamburger &&
-  e.touches[0].target.parentNode != document.querySelector(".nav-container")
-    ? (hamburger.classList.remove("active"),
-      navContainer.classList.remove("active"),
-      navBar.classList.remove("active"))
-    : null;
-});
+// document.addEventListener("touchstart", (e) => {
+//   e.touches[0].target != hamburger &&
+//   e.touches[0].target.parentNode != document.querySelector(".nav-container")
+//     ? (hamburger.classList.remove("active"),
+//       navContainer.classList.remove("active"),
+//       navBar.classList.remove("active"))
+//     : null;
+// });
 
 // hamburger.addEventListener("click", (e) => {
 //     (hamburger.classList.toggle("active"),
