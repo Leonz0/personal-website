@@ -129,7 +129,7 @@ hr {
   grid-column-start: 1;
   grid-row-start: 1;
   /* height: 2rem; */
-  z-index: 110;
+  z-index: 1000;
 
   display: flex;
   /* justify-content: space-between; */
@@ -271,7 +271,7 @@ hr {
     display: flex;
     flex-direction: column;
     padding-top: 2.5em;
-    padding-bottom: 15em;
+    padding-bottom: 4em;
     padding-left: 2.5em;
     padding-right: 2.5em;
     background-color: #f0f2fa;
