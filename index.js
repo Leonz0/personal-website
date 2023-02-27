@@ -10,16 +10,18 @@ const formItem = document.querySelector(".form-item");
 const inputV = document.querySelectorAll(".input-v");
 const inputName = document.querySelector(".input-name");
 
+// navBar.style.position = "fixed";
 // [...navLinks].map((link) => {
 //   link.addEventListener("click", function () {
 //     [...navLinks].map((link) => link.classList.remove("active"));
 //     this.classList.add("active");
 //   });
 // });
+const isMobile = () => (window.innerWidth < 721 ? true : false);
+
+isMobile() ? (navBar.style.position = "absolute") : null;
 
 // window.innerWidth < 767 ? backHomeButton.classList.remove(".back-home") : null;
-
-const isMobile = () => (window.innerWidth < 721 ? true : false);
 
 const hamburger = document.getElementById("nav-toggle");
 const navContainer = document.querySelector(".nav-container");
@@ -61,35 +63,42 @@ document.addEventListener("click", (e) => {
 // });
 
 const isAtHome = () => {
-  const mobile = isMobile();
+  if (isMobile()) return;
+
   homeNav.classList.contains("active")
-    ? ((backHomeButton.style.display = "none"),
-      !mobile
-        ? (logoContainer.style.display = "flex")
-        : ((logoContainer.style.display = "none"),
-          (navBar.style.justifyContent = "center")),
-      (navBar.style.gap = "4em"))
-    : //   [...navLinks].map((navLink) => (navLink.style.fontSize = "1.1rem")))
-    !mobile
-    ? (backHomeButton.style.display = "flex")
-    : null,
-    (backHomeButton.style.justifyContent = "center"),
-    (backHomeButton.style.alignItems = "center"),
-    (logoContainer.style.display = "flex"),
-    (navBar.style.justifyContent = "space-between"),
-    (navBar.style.gap = "1.5em");
+    ? (backHomeButton.style.display = "none")
+    : //   !mobile
+      //     ? (logoContainer.style.display = "flex")
+      //     : ((logoContainer.style.display = "none"),
+      //       (navBar.style.justifyContent = "center")),
+      //   (navBar.style.gap = "4em"))
+      // : //   [...navLinks].map((navLink) => (navLink.style.fontSize = "1.1rem")))
+      // !mobile
+      //?
+      ((backHomeButton.style.display = "flex")(
+        //: null,
+        (backHomeButton.style.justifyContent = "center")
+      ),
+      (backHomeButton.style.alignItems = "center"));
+  // (logoContainer.style.display = "flex"),
+  // (navBar.style.justifyContent = "space-between"),
+  // (navBar.style.gap = "1.5em");
   // [...navLinks].map((navLink) => (navLink.style.fontSize = "1rem"));
 };
 
 isAtHome();
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll", (e) => {
+  scrollY === 0 && isMobile()
+    ? (navBar.style.position = "absolute")
+    : (navBar.style.position = "sticky");
+
   let current = "";
   sections.forEach((section) => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.clientHeight;
 
-    if (pageYOffset >= sectionTop - sectionHeight / 1.8)
+    if (scrollY >= sectionTop - sectionHeight / 1.8)
       current = section.getAttribute("id");
   });
 
