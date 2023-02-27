@@ -9,6 +9,7 @@ const inputForm = document.querySelector("form");
 const formItem = document.querySelector(".form-item");
 const inputV = document.querySelectorAll(".input-v");
 const inputName = document.querySelector(".input-name");
+const homeEl = document.querySelector(".home-page");
 
 // navBar.style.position = "fixed";
 // [...navLinks].map((link) => {
@@ -17,9 +18,22 @@ const inputName = document.querySelector(".input-name");
 //     this.classList.add("active");
 //   });
 // });
+
+function isScrolledIntoView(el) {
+  var rect = el.getBoundingClientRect();
+  var elemTop = rect.top;
+  var elemBottom = rect.bottom;
+
+  // Only completely visible elements return true:
+  var isVisible = elemTop >= 0 && elemBottom <= window.innerHeight;
+  // Partially visible elements return true:
+  //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+  return isVisible;
+}
+
 const isMobile = () => (window.innerWidth < 721 ? true : false);
 
-isMobile() ? (navBar.style.position = "absolute") : null;
+// isMobile() ? (navBar.style.position = "absolute") : null;
 
 // window.innerWidth < 767 ? backHomeButton.classList.remove(".back-home") : null;
 
@@ -75,10 +89,9 @@ const isAtHome = () => {
       // : //   [...navLinks].map((navLink) => (navLink.style.fontSize = "1.1rem")))
       // !mobile
       //?
-      ((backHomeButton.style.display = "flex")(
-        //: null,
-        (backHomeButton.style.justifyContent = "center")
-      ),
+      ((backHomeButton.style.display = "flex"),
+      //: null,
+      (backHomeButton.style.justifyContent = "center"),
       (backHomeButton.style.alignItems = "center"));
   // (logoContainer.style.display = "flex"),
   // (navBar.style.justifyContent = "space-between"),
@@ -188,7 +201,7 @@ const btnSendMsg = document.querySelector(".submit-btn");
 inputForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  btnSendMsg.style.background = "rgba(0, 0, 255, 0.5)";
+  btnSendMsg.style.background = "rgba(0, 0, 255, 0.4)";
   btnSendMsg.style.boxShadow = "0 0 1em 0.1em rgba(0, 0, 175, 0.0)";
   btnSendMsg.innerText = "Message sent";
   inputForm.style.backgroundColor = "rgba(0, 0, 255, 0.04)";
