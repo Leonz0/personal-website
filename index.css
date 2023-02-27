@@ -19,7 +19,7 @@ p {
 }
 
 body {
-  position: relative;
+  display: block;
   /* position: relative;
   display: grid; */
   /* grid-template-rows: 1fr 1fr 1fr 1fr; */
@@ -31,7 +31,7 @@ body {
   box-shadow: 0 0.5em 1em 0.1em rgba(0, 0, 255, 0.1);
 }
 
-@media (max-width: 1068px) {
+@media (max-width: 719px) {
   body {
     box-shadow: 0 0.5em 1em 0.1em rgba(0, 0, 255, 0);
   }
@@ -272,18 +272,18 @@ hr {
 
 @media (max-width: 719px) {
   .nav-container {
-    /* display: none; */
-    max-height: 0;
+    display: none;
+    /* max-height: 0;
     width: 0px;
-    overflow: hidden;
+    overflow: hidden; */
     transition: all 250ms ease-in-out;
   }
 
   .nav-container.active {
     display: flex;
     flex-direction: column;
-    max-height: 40svh;
-    width: auto;
+    /* max-height: 40svh;
+    width: auto; */
     padding-top: 2.5em;
     padding-bottom: 4em;
     padding-left: 2.5em;
@@ -424,13 +424,17 @@ button.resume:active,
   color: rgb(90, 90, 255);
 }
 
-@media (max-width: 1068px) {
+@media (max-width: 719px) {
   .skill-heading,
   .profolio-heading,
   .contact-heading {
     font-size: 1.1rem;
     padding: 0 0 0.2em 0;
     color: rgb(90, 90, 255);
+  }
+
+  .contact-heading {
+    align-self: center;
   }
 }
 
@@ -595,11 +599,27 @@ img {
   /* background-color: aqua; */
 }
 
-@media (max-width: 1068px) {
+.contact-info {
+  display: flex;
+  grid-column: 1/2;
+  flex-direction: column;
+  margin: 0 2em 0 12em;
+  flex: 0 1 auto;
+}
+
+@media (max-width: 719px) {
   .contact-page {
     display: flex;
     flex-direction: column;
-    /* background-color: aqua; */
+    justify-content: center;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    gap: 1em;
+    flex: 0 1 auto;
   }
 }
 
@@ -612,13 +632,16 @@ img {
   padding-bottom: 2em;
 }
 
-@media (max-width: 1068px) {
+@media (max-width: 719px) {
   .contact-heading {
-    display: flex;
-    font-size: 1.1rem;
-    flex-direction: column;
-    align-self: flex-end;
+    font-size: 2rem;
+    align-self: center;
     padding-bottom: 2em;
+  }
+
+  .contact-info-item {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -635,13 +658,13 @@ img {
   width: 27em;
 }
 
-@media (max-width: 1068px) {
+@media (max-width: 719px) {
   .input-container {
     display: flex;
-    grid-column: 2/4;
+
     flex-direction: column;
     padding: 0.5em 1.5em 0.5em 0.5em;
-    margin-right: 7em;
+    margin-right: 0em;
     background-color: rgba(0, 0, 255, 0.05);
     box-shadow: 0 0.5em 1em 0.1em rgba(0, 0, 255, 0.1);
     border-radius: 0.333em;
@@ -696,7 +719,7 @@ textarea:focus ~ .placeholder {
   border-radius: 0.333em;
 }
 
-@media (max-width: 1068px) {
+@media (max-width: 719px) {
   .form-item input {
     width: 100%;
     border: none;
@@ -723,7 +746,7 @@ textarea:focus ~ .placeholder {
   border-radius: 0.333em;
 }
 
-@media (max-width: 1068px) {
+@media (max-width: 719px) {
   .input-message {
     border: none;
     border-bottom: 0.1em solid #ccc;
@@ -746,24 +769,6 @@ textarea:focus ~ .placeholder {
   transition: all 0.3s ease;
 }
 
-@media (max-width: 1068px) {
-  .placeholder {
-    position: absolute;
-    margin: 0 0 0 0.5em;
-    top: 1em;
-    color: rgba(0, 0, 50, 0.67);
-    transition: all 0.3s ease;
-  }
-}
-
-.contact-info {
-  display: flex;
-  grid-column: 1/2;
-  flex-direction: column;
-  margin: 0 2em 0 12em;
-  flex: 0 1 auto;
-}
-
 .contact-call-email-h1 {
   font-size: 1.33rem;
   padding: 0 0 0.5em 0;
@@ -782,6 +787,32 @@ i {
   font-size: 2rem;
   margin-bottom: 0.67em;
   align-self: center;
+}
+
+@media (max-width: 719px) {
+  .placeholder {
+    position: absolute;
+    margin: 0 0 0 0.5em;
+    top: 1em;
+    color: rgba(0, 0, 50, 0.67);
+    transition: all 0.3s ease;
+  }
+
+  .contact-call-email-h1 {
+    font-size: 1.2rem;
+    padding: 0 0 0.25em 0;
+  }
+
+  .contact-call-email {
+    font-size: 1rem;
+    margin-bottom: 3em;
+  }
+
+  i {
+    font-size: 2rem;
+    margin-bottom: 0.25em;
+    align-self: center;
+  }
 }
 
 .submit-btn {
