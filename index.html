@@ -40,6 +40,7 @@
   <body>
     <!-- <div class="header-container">
       <header class="main-header"> -->
+    <a href="#home" class="back-home"> ^ </a>
 
     <nav class="navbar">
       <a href="/" class="logo-container home-header">
@@ -68,16 +69,23 @@
     <!-- </header>
     </div> -->
     <section class="home-page" id="home">
-      <a href="#home" class="back-home">^</a>
-      <p class="greating">Hello</p>
+      <h1 class="greating">Hello</h1>
       <div class="introduction">
         <h1 class="i-am">I'm</h1>
         <h1 class="my-name">Leogeo</h1>
       </div>
-      <p class="whoami">Full Stack Dev</p>
+      <h1 class="whoami">Full Stack Dev</h1>
       <div class="home-links">
-        <button>GIT</button>
-        <button>Linkdin</button>
+        <div class="footer-icons-container">
+          <a class="icon" href="https://github.com/Leonz0/"
+            ><img class="github-logo" src="github-logo.svg"
+          /></a>
+          <a
+            class="icon"
+            href="https://www.linkedin.com/in/leonid-heifets-3b332912/"
+            ><img class="linkedin-logo" src="linkedin-logo.svg"
+          /></a>
+        </div>
       </div>
       <button class="resume">Download Resume</button>
     </section>
@@ -142,8 +150,8 @@
     <section class="contact-page" id="contact">
       <!-- <div class="contact-buffer-up"></div> -->
       <div class="contact-heading">Contact</div>
-      <div class="contact-info" href="tel:+97212345678">
-        <a class="contact-info-item">
+      <div class="contact-info">
+        <a class="contact-info-item" href="tel:+97212345678">
           <i class="fa-solid fa-phone"></i>
           <h1 class="contact-call-email-h1">Call me</h1>
           <p class="contact-call-email">+972 12345678</p>
@@ -184,5 +192,19 @@
       </form>
       <!-- <div class="contact-buffer-up"></div> -->
     </section>
+    <footer class="footer-container">
+      <div class="footer-copyright-icons">
+        <p class="footer-copyright">Copyright © 2023 Leonid Heifets</p>
+        <div class="footer-icons-container">
+          <a href="https://github.com/Leonz0/"
+            ><img class="github-logo" src="github-logo.svg"
+          /></a>
+          <a href="https://www.linkedin.com/in/leonid-heifets-3b332912/"
+            ><img class="linkedin-logo" src="linkedin-logo.svg"
+          /></a>
+        </div>
+      </div>
+      <a class="footer-back-home" href="#home">Back to top</a>
+    </footer>
   </body>
 </html>
