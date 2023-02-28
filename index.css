@@ -155,6 +155,7 @@ section {
 
 .logo-text {
   font-size: 1.5rem;
+  align-self: center;
   color: rgba(0, 0, 50, 0.9);
 }
 
@@ -557,6 +558,10 @@ footer {
 }
 
 @media (max-width: 719px) {
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
   hr {
     display: block;
   }
