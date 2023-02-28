@@ -20,7 +20,7 @@ const homeEl = document.querySelector(".home-page");
 // });
 const isMobile = () => (window.innerWidth < 721 ? true : false);
 
-navigator.userAgent.indexOf("Safari") != -1
+navigator.userAgent.indexOf("Safari") === -1
   ? (window.onload = (function () {
       homeEl.scrollIntoView();
       document.querySelector("html").style.scrollBehavior = "smooth";
