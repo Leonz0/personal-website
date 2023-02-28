@@ -1,9 +1,9 @@
 :root {
   --primarycolor: rgb(70, 70, 255);
 }
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 a {
   color: inherit;
