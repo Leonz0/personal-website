@@ -131,8 +131,10 @@ section {
 }
 
 .logo {
-  padding-right: 0.5em;
+  padding-right: 0.2em;
+  scale: 1.25;
 }
+
 .nav-container {
   display: flex;
 }
@@ -149,6 +151,11 @@ section {
 .logo-container {
   display: flex;
   /* align-items: flex-start; */
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  color: rgba(0, 0, 50, 0.9);
 }
 
 .home-page {
@@ -581,7 +588,7 @@ footer {
   }
 
   .navbar.active > a {
-    padding-bottom: 1em;
+    padding-bottom: 1.1em;
   }
 
   .menu-icon {
