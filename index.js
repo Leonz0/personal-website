@@ -20,12 +20,10 @@ const homeEl = document.querySelector(".home-page");
 // });
 const isMobile = () => (window.innerWidth < 721 ? true : false);
 
-navigator.userAgent.indexOf("Safari") === -1
-  ? (window.onload = (function () {
-      homeEl.scrollIntoView();
-      document.querySelector("html").style.scrollBehavior = "smooth";
-    })())
-  : (document.querySelector("html").style.scrollBehavior = "smooth");
+window.onload = (function () {
+  homeEl.scrollIntoView();
+  document.querySelector("html").style.scrollBehavior = "smooth";
+})();
 
 const hamburger = document.getElementById("nav-toggle");
 const navContainer = document.querySelector(".nav-container");
