@@ -19,6 +19,10 @@ const homeEl = document.querySelector(".home-page");
 //   });
 // });
 
+window.onload = (function () {
+  homeEl.scrollIntoView();
+})();
+
 function isScrolledIntoView(el) {
   var rect = el.getBoundingClientRect();
   var elemTop = rect.top;
