@@ -35,6 +35,14 @@ hr {
   display: none;
 }
 
+section {
+  z-index: 0;
+  /* padding-top: 6em; */
+  height: 100vh;
+  height: 100svh;
+  box-shadow: 0 1em 1em -1em rgba(0, 0, 255, 0.05);
+}
+
 .icon {
   display: flex;
   justify-content: center;
@@ -572,6 +580,10 @@ footer {
     box-shadow: 0 0 2em 1em rgba(61, 86, 184, 0.03);
   }
 
+  .navbar.active > a {
+    padding-bottom: 1em;
+  }
+
   .menu-icon {
     display: block;
     position: absolute;
@@ -833,11 +845,4 @@ footer {
   flex-direction: column;
   width: 100%;
   margin-left: 0.65em;
-}
-
-section {
-  z-index: 0;
-  /* padding-top: 6em; */
-  height: 100vh;
-  height: 100svh;
 }
