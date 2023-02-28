@@ -1,3 +1,6 @@
+:root {
+  --primarycolor: rgb(70, 70, 255);
+}
 html {
   scroll-behavior: smooth;
 }
@@ -70,7 +73,7 @@ section {
 .nav-target.active {
   transform: scale(1.2);
   transition: transform 0.3s ease-in-out;
-  color: rgb(90, 90, 255);
+  color: var(--primarycolor);
 }
 
 .back-home {
@@ -84,7 +87,8 @@ section {
 
   font-weight: 700;
   color: white;
-  background-color: rgba(90, 90, 255, 0.67);
+  background-color: var(--primarycolor);
+  opacity: 0.67;
   font-size: 1rem;
   border-radius: 0.333em;
   cursor: pointer;
@@ -93,13 +97,13 @@ section {
 
 .back-home:hover {
   transform: translateY(-0.5em) scale(1.1);
-  background-color: rgba(90, 90, 255, 1);
+  background-color: var(--primarycolor);
 }
 
 .back-home:focus {
   transform: translateY(-10em) scale(1.25);
-  opacity: 0;
-  background-color: rgba(90, 90, 255, 1);
+  opacity: 0.3;
+  background-color: var(--primarycolor);
 }
 
 .navbar {
@@ -156,7 +160,7 @@ section {
 .logo-text {
   font-size: 1.5rem;
   align-self: center;
-  color: rgba(0, 0, 50, 0.9);
+  opacity: 0.9;
 }
 
 .home-page {
@@ -170,7 +174,7 @@ section {
 }
 
 .greating {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin: 0;
   font-weight: 500;
 }
@@ -180,10 +184,15 @@ section {
   justify-content: space-between;
   font-size: 4rem;
   gap: 1rem;
+  line-height: 1.5em;
+}
+
+.i-am {
+  opacity: 0.8;
 }
 
 .my-name {
-  color: rgb(90, 90, 255);
+  color: var(--primarycolor);
   font-weight: 600;
   transform-origin: top;
   transition: transform 0.3s ease-in-out;
@@ -198,14 +207,14 @@ section {
   border: 0;
   padding: 1em;
   color: white;
-  background-color: rgb(90, 90, 255);
+  background-color: var(--primarycolor);
   font-size: 1rem;
   border-radius: 0.333em;
 }
 
 .whoami {
   font-size: 1.5rem;
-  margin: 0.5em 0 2em 0;
+  margin: 0.5em 0 3em 0;
   font-weight: 500;
 }
 
@@ -217,7 +226,7 @@ section {
 button.resume:hover,
 .submit-btn:hover {
   transform: scale(1.01);
-  background-color: rgb(100, 100, 255);
+  background-color: rgb(90, 90, 255);
   cursor: pointer;
   box-shadow: 0 0 0.15em 0.14em rgba(0, 0, 100, 0.2);
 }
@@ -227,7 +236,7 @@ button.resume:active,
   transform: scale(1.05);
 }
 
-.skills-page {
+.about-page {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 2fr 1fr;
@@ -244,7 +253,7 @@ button.resume:active,
 .contact-heading {
   font-size: 2rem;
   padding: 0 0 0.2em 0;
-  color: rgb(90, 90, 255);
+  color: var(--primarycolor);
 }
 
 .skill-heading ~ p {
@@ -258,7 +267,7 @@ button.resume:active,
   align-self: end;
 }
 
-.skills-middle {
+.about-middle {
   display: flex;
   gap: 7.5em;
   align-items: center;
@@ -456,7 +465,8 @@ textarea:focus ~ .placeholder {
   transform: translateY(-1em);
   font-size: 0.75rem;
   margin: 0.2em 0 0 0.75em;
-  color: rgba(100, 100, 255, 0.67);
+  color: var(--primarycolor);
+  opacity: 0.6;
 }
 
 .form-item input {
@@ -466,7 +476,6 @@ textarea:focus ~ .placeholder {
   padding: 1.1em 0.5em;
   font-size: 1.125rem;
   margin-bottom: 0.75em;
-
   outline: none;
   border-radius: 0.333em;
 }
@@ -488,14 +497,14 @@ textarea:focus ~ .placeholder {
   position: absolute;
   margin: 0 0 0 0.5em;
   top: 1.2em;
-  color: rgba(0, 0, 50, 0.67);
+  opacity: 0.7;
   transition: all 0.3s ease;
 }
 
 .contact-call-email-h1 {
   font-size: 1.5rem;
   padding: 0 0 0.25em 0;
-  color: rgba(0, 0, 50, 0.8);
+  opacity: 0.8;
   align-self: center;
 }
 
@@ -506,7 +515,7 @@ textarea:focus ~ .placeholder {
 }
 
 i {
-  color: rgb(90, 90, 255);
+  color: var(--primarycolor);
   font-size: 3rem;
   margin-bottom: 0.67em;
   align-self: center;
@@ -521,30 +530,35 @@ i {
 footer {
   display: flex;
   flex: 0 1 auto;
-  align-self: center;
+  /* align-self: center; */
   justify-content: space-between;
-  margin: 0 4em 0 4em;
+  margin: 0.25em 4em 0 4em;
   border-radius: 0.3em;
 }
 
 .footer-back-home {
   display: flex;
   justify-content: end;
-  color: rgba(0, 0, 50, 0.8);
+  opacity: 0.8;
   margin-right: 2em;
   align-self: center;
 }
 
 .footer-copyright-icons {
   display: flex;
-  justify-content: start;
   margin-left: 2em;
+  gap: 2em;
 }
 
 .footer-icons-container {
   display: flex;
   align-self: center;
-  /* padding-left: 2em; */
+}
+
+.home-icons-container {
+  display: flex;
+  align-self: center;
+  margin-bottom: 2em;
 }
 
 @media (max-width: 1068px) {
@@ -601,7 +615,6 @@ footer {
     position: absolute;
     top: 1rem;
     right: 4%;
-    color: #0a2463;
   }
 
   .menu-icon {
@@ -626,8 +639,8 @@ footer {
     position: absolute;
     height: 0.19em;
     width: 100%;
-    background: #0a2463;
-    opacity: 1;
+    background: #000000;
+    opacity: 0.8;
     left: 0;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -691,7 +704,7 @@ footer {
     padding-right: 2.5em;
     /* background-color: rgb(247, 247, 255); */
     background-color: rgba(0, 0, 0, 0.02);
-    box-shadow: 0 0 2em 1em rgba(50, 50, 100, 0.05);
+    box-shadow: 0 0 2em 1em rgba(50, 50, 100, 0.075);
     /* transition: all 300ms ease-in-out !important; */
   }
   /* 
@@ -720,11 +733,9 @@ footer {
   }
 
   .skill-heading,
-  .profolio-heading,
-  .contact-heading {
-    font-size: 1.1rem;
-    padding: 0 0 0.2em 0;
-    color: rgb(90, 90, 255);
+  .profolio-heading {
+    font-size: 1.6rem;
+    padding: 0 0 0 0;
   }
 
   .contact-page {
@@ -776,7 +787,8 @@ footer {
     transform: translateY(-1em);
     font-size: 0.8rem;
     margin: 0.25em 0 0 0.75em;
-    color: rgba(100, 100, 255, 0.67);
+    color: var(--primarycolor);
+    opacity: 0.67;
   }
 
   .form-item input {
@@ -806,7 +818,7 @@ footer {
     position: absolute;
     margin: 0 0 0 0.5em;
     top: 1em;
-    color: rgba(0, 0, 50, 0.67);
+    opacity: 0.7;
     transition: all 0.3s ease;
   }
 
@@ -819,7 +831,7 @@ footer {
   .contact-call-email {
     font-size: 1rem;
     /* font-weight: 550; */
-    color: rgba(0, 0, 50, 0.8);
+    opacity: 0.9;
     margin: 0;
   }
 
@@ -838,15 +850,21 @@ footer {
     flex-direction: column;
     align-self: center;
     margin-left: 0;
+    gap: 0;
   }
 
   .footer-back-home {
-    margin-right: 0;
+    scale: 1.1;
+    margin: 0;
+    padding: 0.75em;
+    box-shadow: 0 0.5em 0.5em 0.5em rgba(0, 0, 50, 0.1);
+    border-radius: 0.3em;
   }
 
   .footer-icons-container {
     padding-left: 0;
     margin-left: 1em;
+    margin-bottom: 0.25em;
   }
 }
 

@@ -33,10 +33,6 @@ function isScrolledIntoView(el) {
 
 const isMobile = () => (window.innerWidth < 721 ? true : false);
 
-// isMobile() ? (navBar.style.position = "absolute") : null;
-
-// window.innerWidth < 767 ? backHomeButton.classList.remove(".back-home") : null;
-
 const hamburger = document.getElementById("nav-toggle");
 const navContainer = document.querySelector(".nav-container");
 
@@ -54,27 +50,6 @@ document.addEventListener("click", (e) => {
       navContainer.classList.remove("active"),
       navBar.classList.remove("active"));
 });
-
-// document.addEventListener("touchstart", (e) => {
-//   e.touches[0].target != hamburger &&
-//   e.touches[0].target.parentNode != document.querySelector(".nav-container")
-//     ? (hamburger.classList.remove("active"),
-//       navContainer.classList.remove("active"),
-//       navBar.classList.remove("active"))
-//     : null;
-// });
-
-// hamburger.addEventListener("click", (e) => {
-//   hamburger.classList.toggle("active"),
-//     navContainer.classList.toggle("active"),
-//     navBar.classList.toggle("active");
-// });
-
-// navContainer.addEventListener("click", () => {
-//   hamburger.classList.toggle("active"),
-//     navContainer.classList.toggle("active"),
-//     navBar.classList.toggle("active");
-// });
 
 const isAtHome = () => {
   if (isMobile()) return;
