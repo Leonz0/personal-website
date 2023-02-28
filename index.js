@@ -18,25 +18,14 @@ const homeEl = document.querySelector(".home-page");
 //     this.classList.add("active");
 //   });
 // });
-
-window.onload = (function () {
-  homeEl.scrollIntoView();
-  document.querySelector("html").style.scrollBehavior = "smooth";
-})();
-
-function isScrolledIntoView(el) {
-  var rect = el.getBoundingClientRect();
-  var elemTop = rect.top;
-  var elemBottom = rect.bottom;
-
-  // Only completely visible elements return true:
-  var isVisible = elemTop >= 0 && elemBottom <= window.innerHeight;
-  // Partially visible elements return true:
-  //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
-  return isVisible;
-}
-
 const isMobile = () => (window.innerWidth < 721 ? true : false);
+
+navigator.userAgent.indexOf("Safari") != -1
+  ? (window.onload = (function () {
+      homeEl.scrollIntoView();
+      document.querySelector("html").style.scrollBehavior = "smooth";
+    })())
+  : (document.querySelector("html").style.scrollBehavior = "smooth");
 
 const hamburger = document.getElementById("nav-toggle");
 const navContainer = document.querySelector(".nav-container");
