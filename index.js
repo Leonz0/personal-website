@@ -100,9 +100,10 @@ const isAtHome = () => {
 };
 
 isAtHome();
-
+//Prevent scrollY = 0 sticky navbar jitter
+let zeroSticky = 0;
 window.addEventListener("scroll", (e) => {
-  scrollY === 0 && isMobile()
+  scrollY === 0 && isMobile() && zeroSticky === 0
     ? (navBar.style.position = "absolute")
     : (navBar.style.position = "sticky");
 
@@ -122,6 +123,7 @@ window.addEventListener("scroll", (e) => {
     }
   });
 
+  zeroSticky = 1;
   isAtHome();
 });
 
