@@ -563,6 +563,7 @@ footer {
 @media (max-width: 1068px) {
   body {
     box-shadow: 0 0.5em 1em 0.1em rgba(0, 0, 255, 0);
+    overflow: hidden;
   }
 
   .contact-info {
@@ -879,7 +880,6 @@ footer {
   .slideshow-container {
     max-width: 100vw;
     max-width: 100svw;
-    overflow: hidden;
   }
 
   .dot {
