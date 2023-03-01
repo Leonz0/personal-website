@@ -880,9 +880,8 @@ footer {
   }
 
   .slide-2 {
-    touch-action: pan-y;
+    touch-action: none;
     overflow: hidden;
-    /* scale: 1.5; */
   }
 
   /* .slide-2:hover {
