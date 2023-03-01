@@ -877,9 +877,9 @@ footer {
     overflow: hidden;
   }
 
-  .slide-2:hover {
+  /* .slide-2:hover {
     transform: scale(1);
-  }
+  } */
 
   .slideshow-container {
     max-width: 100vw;

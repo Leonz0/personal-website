@@ -134,7 +134,7 @@ const mobileSlider = (() => {
   });
 
   mobileSlide.addEventListener("touchmove", (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     if (initialTouchPos === null) {
       return;
     }
