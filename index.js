@@ -96,14 +96,15 @@ window.addEventListener("scroll", (e) => {
   isAtHome();
 });
 
-const slideRight = document.querySelector(".slide-1");
-const slideLeft = document.querySelector(".slide-3");
+const slide3 = document.querySelector(".slide-1");
+const slide1 = document.querySelector(".slide-3");
+const mobileSlide = document.querySelector(".slide-2");
 const rightPic = document.querySelector(".pic1");
 const leftPic = document.querySelector(".pic3");
 const curPic = document.querySelector(".pic2");
 const slides = document.getElementsByClassName("mySlides");
 const dots = document.getElementsByClassName("dot");
-
+let initialTouchPos = null;
 let noOfPics = 3;
 let slideIndex = 2;
 
@@ -112,6 +113,58 @@ let mid = 2;
 let left = 3;
 
 showSlides(slideIndex);
+
+const slideLeftRight = (direction) => {
+  direction === "left"
+    ? ((right = mid),
+      (mid = left),
+      left !== noOfPics ? left++ : (left = 1),
+      changePicSource(left, mid, right),
+      moveSlides(-1))
+    : ((left = mid),
+      (mid = right),
+      right !== 1 ? right-- : (right = noOfPics),
+      changePicSource(left, mid, right),
+      moveSlides(1));
+};
+
+const mobileSlider = (() => {
+  mobileSlide.addEventListener("touchstart", (e) => {
+    initialTouchPos = e.touches[0].clientX;
+  });
+
+  mobileSlide.addEventListener("touchmove", (e) => {
+    if (initialTouchPos === null) {
+      return;
+    }
+
+    const currentTouchPos = e.touches[0].clientX;
+    const distance = currentTouchPos - initialTouchPos;
+
+    // Move the image horizontally based on the touch movement
+    mobileSlide.style.transform = `translateX(${distance}px)`;
+  });
+
+  mobileSlide.addEventListener("touchend", (e) => {
+    if (initialTouchPos === null) {
+      return;
+    }
+
+    const currentTouchPos = e.changedTouches[0].clientX;
+    const distance = currentTouchPos - initialTouchPos;
+
+    if (distance > 0) {
+      slideLeftRight("right");
+    } else {
+      slideLeftRight("left");
+    }
+
+    // Reset the image container position
+    mobileSlide.style.transform = "translateX(0)";
+
+    initialTouchPos = null;
+  });
+})();
 
 function moveSlides(n) {
   showSlides((slideIndex += n));
@@ -139,24 +192,12 @@ function changePicSource(left, mid, right) {
   rightPic.src = `image${right}.jpg`;
 }
 
-slideRight.addEventListener("click", function () {
-  left = mid;
-  mid = right;
-  right !== 1 ? right-- : (right = noOfPics);
-
-  changePicSource(left, mid, right);
-
-  moveSlides(1);
+slide3.addEventListener("click", function () {
+  slideLeftRight("right");
 });
 
-slideLeft.addEventListener("click", function () {
-  right = mid;
-  mid = left;
-  left !== noOfPics ? left++ : (left = 1);
-
-  changePicSource(left, mid, right);
-
-  moveSlides(-1);
+slide1.addEventListener("click", function () {
+  slideLeftRight("left");
 });
 
 [...inputV].map((input) =>

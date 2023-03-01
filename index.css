@@ -1,9 +1,11 @@
 :root {
   --primarycolor: rgb(70, 70, 255);
 }
-/* html {
-  scroll-behavior: smooth;
-} */
+
+html {
+  /* scroll-behavior: smooth; */
+  -webkit-tap-highlight-color: transparent;
+}
 
 a {
   color: inherit;
@@ -300,6 +302,7 @@ button.resume:active,
   /* align-items: center; */
   /* height: 100vh;
         height: 100svh; */
+  gap: 4em;
   grid-column-start: 1;
   grid-row-start: 3;
   text-align: center;
@@ -310,11 +313,10 @@ button.resume:active,
 
 .slideshow-container {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 4em 0 2em 0;
+  margin: 0 0 2em 0;
 }
 
 img {
@@ -870,9 +872,13 @@ footer {
     display: none;
   }
 
+  .slide-2:hover {
+    transform: scale(1);
+  }
+
   .slideshow-container {
-    padding-left: 0;
-    padding-right: 0;
+    max-width: 100vw;
+    max-width: 100svw;
   }
 
   .dot {
