@@ -20,11 +20,11 @@ const homeEl = document.querySelector(".home-page");
 // });
 const isMobile = () => (window.innerWidth < 721 ? true : false);
 
-window.onload = (function () {
-  //   navigator.userAgent.indexOf('Safari') != -1;
-  homeEl.scrollIntoView();
-  document.querySelector("html").style.scrollBehavior = "smooth";
-})();
+// window.onload = (function () {
+//   //   navigator.userAgent.indexOf('Safari') != -1;
+//   homeEl.scrollIntoView();
+//   document.querySelector("html").style.scrollBehavior = "smooth";
+// })();
 
 const hamburger = document.getElementById("nav-toggle");
 const navContainer = document.querySelector(".nav-container");
@@ -71,10 +71,10 @@ isAtHome();
 //Prevent scrollY = 0 sticky navbar jitter
 // let zeroSticky = 0;
 window.addEventListener("scroll", (e) => {
-  scrollY === 0
-    ? //   && isMobile() && zeroSticky === 0
-      (navBar.style.position = "absolute")
-    : (navBar.style.position = "sticky");
+  //   scrollY === 0
+  //     ? //   && isMobile() && zeroSticky === 0
+  //       (navBar.style.position = "absolute")
+  //     : (navBar.style.position = "sticky");
 
   let current = "";
   sections.forEach((section) => {
