@@ -18,7 +18,16 @@ const homeEl = document.querySelector(".home-page");
 //     this.classList.add("active");
 //   });
 // });
+
 const isMobile = () => (window.innerWidth < 721 ? true : false);
+
+addEventListener("load", function () {
+  var viewport = document.querySelector("meta[name=viewport]");
+  viewport.setAttribute(
+    "content",
+    viewport.content + ", height=" + window.innerHeight
+  );
+});
 
 // window.onload = (function () {
 //   //   navigator.userAgent.indexOf('Safari') != -1;
