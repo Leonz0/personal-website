@@ -105,7 +105,7 @@ const mobileSlider = (() => {
     const currentTouchPos = e.touches[0].clientX;
     const distance = currentTouchPos - initialTouchPos;
 
-    middleSlide.style.transform = `translateX(${distance > 0 ? 1 : -1}em)`;
+    middleSlide.style.transform = `translateX(${distance > 0 ? 2 : -2}em)`;
   });
 
   middleSlide.addEventListener("touchend", (e) => {
