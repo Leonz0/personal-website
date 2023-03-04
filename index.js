@@ -67,13 +67,53 @@ const rightPic = document.querySelector(".pic2");
 const leftPic = document.querySelector(".pic3");
 const curPic = document.querySelector(".pic1");
 const slides = document.getElementsByClassName("mySlides");
+const profolioList = document.querySelector(".profolio-list");
 
-const gallery = [1, 2, 3]; // After fetch projects.length
+const gallery = [
+  {
+    id: 1,
+    name: "Tomatoes",
+    description: "Vanilla tomatoes",
+    image: "image1.jpg",
+  },
+  {
+    id: 2,
+    name: "Teamwork",
+    description: "Team player",
+    image: "image2.jpg",
+  },
+  {
+    id: 3,
+    name: "Rabbit",
+    description: "Fast learner",
+    image: "image3.jpg",
+  },
+]; // After fetch projects
 
 let initialTouchPos = null;
 let right = 2;
 let mid = 1;
 let left = gallery.length;
+
+//should await for fatching of gallery
+const fillProfolioItems = ((gallery) => {
+  gallery.map((item, i) => {
+    console.log(i);
+    const newProfItem = document.createElement("p");
+
+    newProfItem.textContent = item.name;
+    profolioList.insertAdjacentElement("beforeend", newProfItem);
+
+    // fill .src for images
+    i === 0
+      ? (curPic.src = `image${i + 1}.jpg`)
+      : i === 1
+      ? (rightPic.src = `image${i + 1}.jpg`)
+      : i === gallery.length - 1
+      ? (leftPic.src = `image${i + 1}.jpg`)
+      : console.log("xxx");
+  });
+})(gallery);
 
 function changePicSource(left, mid, right) {
   leftPic.src = `image${left}.jpg`;
